@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # get 'sessions/new'
+
   root 'static_pages#home'    # this will create two variable (or two named routes)
   # 1/ root_path -> '/' and
   # 2/ root_url  -> 'http://www.example.com/'
@@ -10,9 +12,11 @@ Rails.application.routes.draw do
   # 2/ help_url  -> 'http://www.example.com/help'
 
   get 'signup'  => 'users#new'
+  get 'login'   => 'sessions#new'
+  post 'login'   => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   resources :microposts
-
   resources :users
   # define resources make up all REST URLs, but we still need to define controller and action
 end
