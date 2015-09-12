@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # remember user
-      redirect_to user    # Rails automatically converts this to the route for the user’s profile page: user_url(user)
+      # redirect_to user    # Rails automatically converts this to the route for the user’s profile page: user_url(user)
+      redirect_back_or user
     else
       flash.now[:danger] = 'Invalid email/password combination'
       # Unlike the contents of flash, the contents of flash.now disappear as soon as we go to another page
