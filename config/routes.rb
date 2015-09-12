@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :microposts
   resources :users
   # define resources make up all REST URLs, but we still need to define controller and action
+
+  resources :account_activations, only: [:edit]
+
+  resources :microposts
 end
