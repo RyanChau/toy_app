@@ -7,6 +7,11 @@ gem 'rails', '4.2.2'
 # gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 gem 'faker',                '1.4.2'
 
+#image upload gem
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.26.0'
+
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
