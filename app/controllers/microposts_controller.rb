@@ -4,9 +4,13 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find(params[:id])
-    @user = User.find(@micropost.user_id)
-    @comments = Comment.where(micropost_id: params[:id])
-    @comment = Comment.new
+    if(@micropost)
+      @user = User.find(@micropost.user_id)
+      @comments = Comment.where(micropost_id: params[:id])
+      @comment = Comment.new
+    else    # in case of the post is deleted
+      redirect root_path
+    end
 # the micropost_id is automatically set by build
   end
 
