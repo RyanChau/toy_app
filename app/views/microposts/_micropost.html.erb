@@ -12,5 +12,6 @@
       <%= link_to "delete", micropost, method: :delete,
                   data: { confirm: "You sure?" } %>
     <% end %>
+    <%= link_to "comment", controller: "microposts", action: "show", id: micropost.id %>
   </span>
 </li>

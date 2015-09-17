@@ -6,7 +6,7 @@
 <ul class="users">
   <%= render @users %>
   <!-- render can infer @user is a list of users. When render called with a list of objects,
-   Rails automatically iterates through them and renders each one with the _user.html.erb partial. So we don't need each do anymore as in the comments-->
+   Rails automatically iterates through them and renders each one with the _user.html.erb partial. So we don't need (each do) anymore as in the comments-->
   <% if false %> <!-- this is used for commenting embedded ruby code -->
       <% @users.each do |user| %>
           <%= render user %>

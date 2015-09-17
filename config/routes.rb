@@ -14,10 +14,18 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :users
+  resources :users do
+    member do
+      # /users/1/following and /users/1/followers
+      get :following, :followers
+    end
+  end
+
   # define resources make up all REST URLs, but we still need to define controller and action
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts,          only: [:show,:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
+  resources :comments,          only: [:create, :destroy]
 end

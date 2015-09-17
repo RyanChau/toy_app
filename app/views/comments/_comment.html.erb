@@ -1,0 +1,5 @@
+<% @commenter = User.find(comment.commenter_id) %>
+<p>
+  <strong> <%= @commenter.name %>: </strong>
+  <%= comment.content %>
+</p>
